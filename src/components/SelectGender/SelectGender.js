@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
-import PropTypes from "prop-types";
 import { changeGender } from "../../actions";
 import styles from "./SelectGender.module.css";
 
@@ -34,7 +32,7 @@ function SelectGender() {
           </label>
         </div>
         <div className={styles.radio}>
-          <label className={styles.label} htmlFor="secondName">
+          <label className={styles.label}>
             <input
               type="radio"
               value="Женский"
@@ -52,15 +50,5 @@ function SelectGender() {
     </div>
   );
 }
-
-SelectGender.defaultProps = {
-  gender: "",
-  changeGender: () => {},
-};
-
-SelectGender.propTypes = {
-  gender: PropTypes.string,
-  changeGender: PropTypes.func,
-};
 
 export default SelectGender;

@@ -2,6 +2,10 @@
   grid-area: university;
 }
 
+.dropDownMenu {
+  width: 410px;
+}
+
 .select {
   width: 410px;
   height: 40px;

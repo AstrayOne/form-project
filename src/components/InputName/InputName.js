@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import PropTypes from "prop-types";
 import { changeName } from "../../actions";
 import styles from "./InputName.module.css";
 import { validStringRegExp } from "../../data/regExps";
@@ -37,15 +36,5 @@ function InputName() {
     </div>
   );
 }
-
-InputName.defaultProps = {
-  name: "",
-  changeName: () => {},
-};
-
-InputName.propTypes = {
-  name: PropTypes.string,
-  changeName: PropTypes.func,
-};
 
 export default InputName;

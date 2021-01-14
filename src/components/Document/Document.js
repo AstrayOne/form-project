@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import PropTypes from "prop-types";
 import styles from "./Document.module.css";
 
 function Document() {
@@ -14,49 +13,24 @@ function Document() {
   return (
     <div className={styles.document}>
       <div className={styles.window}>
-        <div className={styles.title}>Резюме</div>
+        <div className={styles.title}>
+          <span>Анкета студента</span>
+        </div>
         <div className={styles.fio}>
-          <span>{`ФИО : ${name} ${secondName} ${middleName}`}</span>
+          <span>{`ФИО: ${secondName} ${name} ${middleName}`}</span>
         </div>
         <div className={styles.age}>
-          <span>{`Возраст: ${age}`}</span>
+          <span>{`Возраст (полных лет): ${age}`}</span>
         </div>
-        {/* {gender === "male" ? (
-          <div className={styles.gender}>
-            <span>Пол: мужской</span>
-          </div>
-        ) : (
-          <div className={styles.gender}>
-            <span>Пол: женский </span>
-          </div>
-        )} */}
         <div className={styles.gender}>
           <span>{`Пол: ${gender}`}</span>
         </div>
         <div className={styles.university}>
-          <span>{`Образование: ${university}`}</span>
+          <span>{`Учебное заведение: ${university}`}</span>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-Document.defaultProps = {
-  name: "",
-  secondName: "",
-  middleName: "",
-  age: "",
-  gender: "",
-  university: "",
-};
-
-Document.propTypes = {
-  name: PropTypes.string,
-  secondName: PropTypes.string,
-  middleName: PropTypes.string,
-  age: PropTypes.string,
-  gender: PropTypes.string,
-  university: PropTypes.string,
-};
 
 export default Document;

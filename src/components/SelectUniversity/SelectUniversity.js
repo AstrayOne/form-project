@@ -14,7 +14,7 @@ function SelectUniversity() {
 
   useEffect(() => {
     dispatch(changeUniversity(university));
-  });
+  }, [university]);
 
   const handleSelectUniversity = (event) => {
     setUniversity(event.target.textContent);
@@ -45,15 +45,17 @@ function SelectUniversity() {
     return (
       <div className={styles.selectUniversity}>
         Образовательное учреждение
-        <div className={styles.selectOpen} onClick={handleIsMenuOpen}>
-          <span className={styles.span}>{university}</span>
-        </div>
-        <div ref={optionsRef} className={styles.options}>
-          {universityList.map((universityItem) => (
-            <div className={styles.selectItem} onClick={handleSelectUniversity}>
-              <span className={styles.span}>{universityItem}</span>
-            </div>
-          ))}
+        <div className={styles.dropDownMenu} ref={optionsRef}>
+         <div className={styles.selectOpen} onClick={handleIsMenuOpen}>
+            <span className={styles.span}>{university}</span>
+          </div>
+          <div className={styles.options}>
+            {universityList.map((universityItem) => (
+              <div className={styles.selectItem} onClick={handleSelectUniversity}>
+                <span className={styles.span}>{universityItem}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );

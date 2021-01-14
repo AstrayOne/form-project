@@ -24,7 +24,7 @@
   padding-left: 25px;
   color: red;
   font: 12px "Roboto-Light", sans-serif;
-  width: 250px;
+  width: 100px;
 }
 
 .error::after {

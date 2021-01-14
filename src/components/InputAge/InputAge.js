@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import PropTypes from "prop-types";
-import { changeAge, } from "../../actions";
+import { changeAge } from "../../actions";
 import styles from "./InputAge.module.css";
 import { validAgeRegExp } from "../../data/regExps";
 
@@ -38,15 +37,5 @@ function InputAge() {
     </div>
   );
 }
-
-InputAge.defaultProps = {
-  age: "",
-  changeAge: () => {},
-};
-
-InputAge.propTypes = {
-  age: PropTypes.string,
-  changeAge: PropTypes.func,
-};
 
 export default InputAge;
