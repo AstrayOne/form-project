@@ -20,7 +20,7 @@ function InputAge() {
   return (
     <div className={styles.age}>
       <label className={styles.label}>
-        Возраст:
+        Возраст
         <input
           className={styles.input}
           name="age"

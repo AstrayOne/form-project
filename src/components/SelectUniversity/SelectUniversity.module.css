@@ -3,6 +3,7 @@
 }
 
 .dropDownMenu {
+  
   width: 410px;
 }
 
@@ -11,6 +12,7 @@
   height: 40px;
   padding: 0 20px;
   margin-top: 10px;
+  background-color: #ffffff;
   border: 1px solid grey;
   border-radius: 5px;
   cursor: pointer;
@@ -22,6 +24,7 @@
   padding: 0 20px;
   margin-top: 10px;
   border: 1px solid grey;
+  background-color: #ffffff;
   border-bottom: 0px;
   border-radius: 5px;
   border-bottom-left-radius: 0px;
@@ -56,6 +59,7 @@
 }
 
 .options {
+  background-color: #ffffff;
   width: 450px;
   border: 1px solid grey;
   border-bottom-left-radius: 5px;
