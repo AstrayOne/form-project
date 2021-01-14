@@ -1,0 +1,59 @@
+.document {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+ 
+  width: 50%;
+  /* width: 950px; */
+  height: 100%;
+}
+
+.window {
+  display: grid;
+  grid-template-areas: 
+    "title title title title"
+    "fio fio fio fio"
+    "age age age age"
+    "gender gender gender gender"
+    "university university university university";
+  grid-template-rows: 100px 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  min-width: 660px;
+  width: 600px;
+  height: 320px;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  width: 100%;
+  height: 20px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #E9EFF6;
+  line-height: 40px;
+  border-width: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.fio {
+  grid-area: fio;
+}
+
+.age {
+  grid-area: age;
+}
+
+.gender {
+  grid-area: gender;
+}
+
+.university {
+  grid-area: university;
+}

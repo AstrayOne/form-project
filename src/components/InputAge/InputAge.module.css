@@ -1,0 +1,47 @@
+.age {
+  grid-area: age;
+}
+
+.input {
+  display: block;
+  width: 243px;
+  padding: 0 20px;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  font: 16px 'Roboto-Regular', sans-serif;
+  line-height: 40px;
+  border-radius: 5px;
+  border:1px solid grey;
+  outline: none;
+}
+
+.input:hover {
+  border-color: #038cfc;
+}
+
+.label {
+  margin-top: 20px;
+}
+
+.error {
+  position: relative;
+  padding-left: 25px;
+  color: red;
+  width: 100%;
+  font: 12px "Roboto-Light", sans-serif;
+}
+
+.error::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 17px;
+  height: 17px;
+  background-image: url("../../img/error.png");
+  background-size: 17px;
+  background-repeat: no-repeat;
+}
+
+

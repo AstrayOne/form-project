@@ -1,0 +1,79 @@
+.selectUniversity {
+  grid-area: university;
+}
+
+.select {
+  width: 410px;
+  height: 40px;
+  padding: 0 20px;
+  margin-top: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selectOpen {
+  width: 410px;
+  height: 40px;
+  padding: 0 20px;
+  margin-top: 10px;
+  border: 1px solid grey;
+  border-bottom: 0px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.select:hover {
+  border-color: #038cfc;
+}
+
+.selectItem {
+  width: 410px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.selectItem:hover {
+  color: #038cfc;
+}
+
+.selectItem:hover {
+  border-color: #038cfc;
+}
+
+.span {
+  width: 410px;
+  height: 20px;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.options {
+  width: 450px;
+  border: 1px solid grey;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.error {
+  position: relative;
+  padding-left: 25px;
+  color: red;
+  font: 12px "Roboto-Light", sans-serif;
+  width: 500px;
+}
+
+.error::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 17px;
+  height: 17px;
+  background-image: url("../../img/error.png");
+  background-size: 17px;
+  background-repeat: no-repeat;
+}
