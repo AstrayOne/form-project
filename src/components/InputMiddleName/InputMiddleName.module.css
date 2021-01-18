@@ -1,29 +1,33 @@
 .middleName {
-  grid-area: middleName;
+  grid-column: 2/5;
+  grid-row: 4;
 }
 
 .input {
   display: block;
-  width: 243px;
-  padding: 0px;
-  padding: 0 20px;
-  margin-top: 10px;
+  width: 288px;
+  padding: 0px 20px;
+  margin-top: 5px;
   margin-right: 0px;
   margin-bottom: 10px;
   font: 16px 'Roboto-Regular', sans-serif;
   line-height: 40px;
   border-radius: 5px;
-  border:1px solid grey;
+  border: 1px solid #e5e5e5;
   outline: none;
+  background-color: #f9f9f9;
 }
 
 .input:hover {
-  border-color: #038cfc;
+  border-color: #2e7afb;
+}
+
+.input:focus {
+  border-color: #2e7afb;
 }
 
 .label {
   margin-top: 20px;
-  width: 200px;
 }
 
 .error {
@@ -31,7 +35,6 @@
   padding-left: 25px;
   color: red;
   font: 12px "Roboto-Light", sans-serif;
-  width: 250px;
 }
 
 .error::after {

@@ -1,5 +1,7 @@
 .gender {
-  grid-area: gender;
+  grid-column: 4;
+  grid-row: 5;
+  width: 110px;
 }
 
 .radio:first-of-type {
@@ -17,24 +19,4 @@
 
 .label {
   cursor: pointer;
-}
-
-.error {
-  position: relative;
-  padding-left: 25px;
-  color: red;
-  font: 12px "Roboto-Light", sans-serif;
-  width: 100px;
-}
-
-.error::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 0px;
-  width: 17px;
-  height: 17px;
-  background-image: url("../../img/error.png");
-  background-size: 17px;
-  background-repeat: no-repeat;
 }

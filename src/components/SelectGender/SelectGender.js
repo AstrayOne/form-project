@@ -44,9 +44,6 @@ function SelectGender() {
           </label>
         </div>
       </label>
-      {gender === "" && (
-        <p className={styles.error}>Пол не выбран, выберите пол.</p>
-      )}
     </div>
   );
 }

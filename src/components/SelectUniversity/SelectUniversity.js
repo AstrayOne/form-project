@@ -66,9 +66,7 @@ function SelectUniversity() {
       <div className={styles.select} onClick={handleIsMenuOpen}>
         <span className={styles.span}>{university}</span>
       </div>
-      {university === "" && (
-        <p className={styles.error}>Выберите образовательное учреждение</p>
-      )}
+
     </div>
   );
 }

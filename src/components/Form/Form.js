@@ -9,16 +9,14 @@ import SelectUniversity from "../SelectUniversity/SelectUniversity";
 
 function Form() {
   return (
-    <div className={styles.form}>
-      <form className={styles.window}>
-        <InputName />
-        <InputMiddleName />
-        <InputSecondName />
-        <InputAge />
-        <InputGender />
-        <SelectUniversity />
-      </form>
-    </div>
+    <form className={styles.form}>
+      <InputName />
+      <InputSecondName />
+      <InputMiddleName />
+      <InputAge />
+      <InputGender />
+      <SelectUniversity />
+    </form>
   );
 }
 

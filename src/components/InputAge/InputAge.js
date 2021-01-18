@@ -8,6 +8,7 @@ function InputAge() {
   const dispatch = useDispatch();
 
   const [age, setAge] = useState(useSelector((state) => state.age));
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     dispatch(changeAge(age));
@@ -15,6 +16,7 @@ function InputAge() {
 
   const handleInputAge = (event) => {
     setAge(event.target.value);
+    validAgeRegExp.test(event.target.value) ? setIsValid(true) : setIsValid(false);
   };
 
   return (
@@ -29,7 +31,7 @@ function InputAge() {
           onChange={handleInputAge}
         />
       </label>
-      {!validAgeRegExp.test(age) && (
+      {!isValid && (
         <p className={styles.error}>
           Возраст введен неверно, введите двузначное число.
         </p>

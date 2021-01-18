@@ -12,22 +12,20 @@ function Document() {
 
   return (
     <div className={styles.document}>
-      <div className={styles.window}>
-        <div className={styles.title}>
-          <span>Анкета студента</span>
-        </div>
-        <div className={styles.fio}>
-          <span>{`ФИО: ${secondName} ${name} ${middleName}`}</span>
-        </div>
-        <div className={styles.age}>
-          <span>{`Возраст (полных лет): ${age}`}</span>
-        </div>
-        <div className={styles.gender}>
-          <span>{`Пол: ${gender}`}</span>
-        </div>
-        <div className={styles.university}>
-          <span>{`Учебное заведение: ${university}`}</span>
-        </div>
+      <div className={styles.title}>
+        <span>Анкета студента</span>
+      </div>
+      <div className={styles.fio}>
+        <span>{`ФИО: ${secondName} ${name} ${middleName}`}</span>
+      </div>
+      <div className={styles.age}>
+        <span>{`Возраст (полных лет): ${age}`}</span>
+      </div>
+      <div className={styles.gender}>
+        <span>{`Пол: ${gender}`}</span>
+      </div>
+      <div className={styles.university}>
+        <span>{`Учебное заведение: ${university}`}</span>
       </div>
     </div>
   );

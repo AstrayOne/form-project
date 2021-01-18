@@ -1,87 +1,87 @@
 .selectUniversity {
-  grid-area: university;
+  grid-column: 2/5;
+  grid-row: 6;
 }
 
 .dropDownMenu {
-  
-  width: 410px;
 }
 
 .select {
-  width: 410px;
+  position: relative;
   height: 40px;
   padding: 0 20px;
   margin-top: 10px;
-  background-color: #ffffff;
-  border: 1px solid grey;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
   border-radius: 5px;
   cursor: pointer;
 }
 
+
+.select:after {
+  position: absolute;
+  content: '❯';
+  transform: rotate(90deg);
+  top: 8px;
+  left: 305px;
+  opacity: 1;
+
+}
+
 .selectOpen {
-  width: 410px;
+  position: relative;
   height: 40px;
   padding: 0 20px;
   margin-top: 10px;
-  border: 1px solid grey;
-  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  background-color: #f9f9f9;
   border-bottom: 0px;
   border-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  border-color: #2e7afb;
+}
+
+.selectOpen:after {
+  position: absolute;
+  content: '❯';
+  transform: rotate(-90deg);
+  top: 8px;
+  left: 305px;
+  opacity: 1;
 }
 
 .select:hover {
-  border-color: #038cfc;
+  border-color:  #e5e5e5;
+}
+
+.select:focus {
+  border-color: #2e7afb;
 }
 
 .selectItem {
-  width: 410px;
   height: 40px;
   padding: 0 20px;
-  border-radius: 0px;
   cursor: pointer;
+  background-color: #f9f9f9;
 }
 
 .selectItem:hover {
-  color: #038cfc;
-}
-
-.selectItem:hover {
-  border-color: #038cfc;
+  border-color: #2e7afb;
 }
 
 .span {
-  width: 410px;
   height: 20px;
   line-height: 40px;
   cursor: pointer;
 }
 
 .options {
+  height: 120px;
   background-color: #ffffff;
-  width: 450px;
-  border: 1px solid grey;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.error {
-  position: relative;
-  padding-left: 25px;
-  color: red;
-  font: 12px "Roboto-Light", sans-serif;
-  width: 500px;
-}
-
-.error::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 0px;
-  width: 17px;
-  height: 17px;
-  background-image: url("../../img/error.png");
-  background-size: 17px;
-  background-repeat: no-repeat;
+  border: 1px solid #2e7afb;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-color: #2e7afb;
+  overflow-y: scroll;
 }

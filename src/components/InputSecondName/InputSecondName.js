@@ -9,6 +9,7 @@ function InputSecondName() {
   const [secondName, setSecondName] = useState(
     useSelector((state) => state.secondName)
   );
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     dispatch(changeSecondName(secondName));
@@ -16,6 +17,7 @@ function InputSecondName() {
 
   const handleInputSecondName = (event) => {
     setSecondName(event.target.value);
+    validStringRegExp.test(event.target.value) ? setIsValid(true) : setIsValid(false);
   };
 
   return (
@@ -30,7 +32,7 @@ function InputSecondName() {
           onChange={handleInputSecondName}
         />
       </label>
-      {!validStringRegExp.test(secondName) && (
+      {!isValid && (
         <p className={styles.error}>
           Фамилия введена неверно, используйте только символы русского алфавита.
         </p>

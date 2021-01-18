@@ -9,6 +9,7 @@ function InputMiddleName() {
   const [middleName, setMiddleName] = useState(
     useSelector((state) => state.middleName)
   );
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     dispatch(changeMiddleName(middleName));
@@ -16,10 +17,11 @@ function InputMiddleName() {
 
   const handleInputMiddleName = (event) => {
     setMiddleName(event.target.value);
+    validStringRegExp.test(event.target.value) ? setIsValid(true) : setIsValid(false);
   };
 
   return (
-    <div className={styles.MiddleName}>
+    <div className={styles.middleName}>
       <label className={styles.label}>
         Отчество
         <input
@@ -30,7 +32,7 @@ function InputMiddleName() {
           onChange={handleInputMiddleName}
         />
       </label>
-      {!validStringRegExp.test(middleName) && (
+      {!isValid && (
         <p className={styles.error}>
           Отчество введено неверно, используйте только символы русского
           алфавита.

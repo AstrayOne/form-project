@@ -7,6 +7,7 @@ import { validStringRegExp } from "../../data/regExps";
 function InputName() {
   const dispatch = useDispatch();
   const [name, setName] = useState(useSelector((state) => state.name));
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     dispatch(changeName(name));
@@ -14,6 +15,7 @@ function InputName() {
 
   const handleInputName = (event) => {
     setName(event.target.value);
+    validStringRegExp.test(event.target.value) ? setIsValid(true) : setIsValid(false);
   };
 
   return (
@@ -28,7 +30,7 @@ function InputName() {
           onChange={handleInputName}
         />
       </label>
-      {!validStringRegExp.test(name) && (
+      {!isValid && (
         <p className={styles.error}>
           Имя введено неверно, используйте только символы русского алфавита.
         </p>
