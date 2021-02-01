@@ -18,7 +18,6 @@
   cursor: pointer;
 }
 
-
 .select:after {
   position: absolute;
   content: '❯';
@@ -53,7 +52,7 @@
 }
 
 .select:hover {
-  border-color:  #e5e5e5;
+  border: 1px solid #2e7afb;
 }
 
 .select:focus {
