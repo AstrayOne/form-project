@@ -16,7 +16,7 @@ body {
 .app {
   display: grid;
   grid-template-columns: 1fr 400px minmax(30px, 1fr) 600px 1fr;
-  grid-template-rows: 1fr 180px 180px 180px 180px 1fr;
+  grid-template-rows: 1fr 190px 190px 190px 190px 1fr;
   height: 100vh;
   font: 18px 'Roboto-Regular', sans-serif;
 }

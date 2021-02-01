@@ -9,12 +9,8 @@ const initialState = {
 
 const changeName = (state, text) => {
   const newState = {
+    ...state,
     name: text,
-    secondName: state.secondName,
-    middleName: state.middleName,
-    age: state.age,
-    gender: state.gender,
-    university: state.university,
   };
 
   return newState;
@@ -22,12 +18,8 @@ const changeName = (state, text) => {
 
 const changeSecondName = (state, text) => {
   const newState = {
-    name: state.name,
+    ...state,
     secondName: text,
-    middleName: state.middleName,
-    age: state.age,
-    gender: state.gender,
-    university: state.university,
   };
 
   return newState;
@@ -35,12 +27,8 @@ const changeSecondName = (state, text) => {
 
 const changeMiddleName = (state, text) => {
   const newState = {
-    name: state.name,
-    secondName: state.secondName,
+    ...state,
     middleName: text,
-    age: state.age,
-    gender: state.gender,
-    university: state.university,
   };
 
   return newState;
@@ -48,12 +36,8 @@ const changeMiddleName = (state, text) => {
 
 const changeAge = (state, text) => {
   const newState = {
-    name: state.name,
-    secondName: state.secondName,
-    middleName: state.middleName,
+    ...state,
     age: text,
-    gender: state.gender,
-    university: state.university,
   };
 
   return newState;
@@ -61,12 +45,8 @@ const changeAge = (state, text) => {
 
 const changeGender = (state, text) => {
   const newState = {
-    name: state.name,
-    secondName: state.secondName,
-    middleName: state.middleName,
-    age: state.age,
+    ...state,
     gender: text,
-    university: state.university,
   };
 
   return newState;
@@ -74,15 +54,15 @@ const changeGender = (state, text) => {
 
 const changeUniversity = (state, text) => {
   const newState = {
-    name: state.name,
-    secondName: state.secondName,
-    middleName: state.middleName,
-    age: state.age,
-    gender: state.gender,
+    ...state,
     university: text,
   };
 
   return newState;
+};
+
+const resetAll = () => {
+  return initialState;
 };
 
 const reducer = (state = initialState, action) => {
@@ -104,6 +84,9 @@ const reducer = (state = initialState, action) => {
 
     case "CHANGE_UNIVERSITY":
       return changeUniversity(state, action.text);
+
+    case "RESET_ALL":
+      return resetAll(state);
 
     default:
       return state;

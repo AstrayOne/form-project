@@ -1,27 +1,24 @@
 import React, { useState, useEffect, useRef } from "react";
 import classNames from "classnames/bind";
-import PropTypes from "prop-types";
-import { ErrorMessage } from "formik";
-import { useDispatch } from "react-redux";
-import { changeUniversity } from "@actions";
-import Error from "@components/Error";
+import { useSelector, useDispatch } from "react-redux";
+import { changeUniversity } from "../../../actions";
 import styles from "./SelectUniversity.module.css";
+import { universityList } from "../../../constants/universityList";
 
-function SelectUniversity(props) {
+function SelectUniversity() {
   const dispatch = useDispatch();
-  const { name, value, options, onChange } = props;
+  const stateUniversity = useSelector((state) => state.university);
 
-  const [university, setUniversity] = useState(value);
+  const [university, setUniversity] = useState(stateUniversity);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    onChange(university);
     dispatch(changeUniversity(university));
   }, [university]);
 
   useEffect(() => {
-    setUniversity(value);
-  }, [value]);
+    setUniversity(stateUniversity);
+  }, [stateUniversity]);
 
   const handleSelectUniversity = (event) => {
     setUniversity(event.target.textContent);
@@ -64,31 +61,47 @@ function SelectUniversity(props) {
         </div>
         {isMenuOpen && 
           <div className={styles.options}>
-            {options.map((option) => (
+            {universityList.map((universityItem) => (
               <div className={styles.selectItem} onClick={handleSelectUniversity}>
-                <span className={styles.span}>{option}</span>
+                <span className={styles.span}>{universityItem}</span>
             </div>
           ))}
         </div>
-        }
-        {!isMenuOpen && <ErrorMessage name={name} component={Error} />}
+      }
       </div>
     </div>
   );
+
+  // if (isMenuOpen) {
+  //   return (
+  //     <div className={styles.selectUniversity}>
+  //       Образовательное учреждение
+  //       <div className={styles.dropDownMenu} ref={optionsRef}>
+  //        <div className={styles.selectOpen} onClick={handleIsMenuOpen}>
+  //           <span className={styles.span}>{university}</span>
+  //         </div>
+  //         <div className={styles.options}>
+  //           {universityList.map((universityItem) => (
+  //             <div className={styles.selectItem} onClick={handleSelectUniversity}>
+  //               <span className={styles.span}>{universityItem}</span>
+  //             </div>
+  //           ))}
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  // return (
+  //   <div className={styles.selectUniversity}>
+  //     Образовательное учреждение
+  //     <div className={styles.select} onClick={handleIsMenuOpen}>
+  //       <span className={styles.span}>{university}</span>
+  //     </div>
+  //   </div>
+  // );
+
+
 }
-
-SelectUniversity.defaultProps = {
-  name: "",
-  value: "",
-  options: [],
-  onChange: () => {},
-};
-
-SelectUniversity.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.string,
-  options: PropTypes.array,
-  onChange: PropTypes.func,
-};
 
 export default SelectUniversity;

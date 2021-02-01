@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeSecondName } from "../../actions";
+import { changeSecondName } from "../../../actions";
 import styles from "./InputSecondName.module.css";
-import { validStringRegExp } from "../../data/regExps";
+import { validStringRegExp } from "../../../Utils/regExps";
 
 function InputSecondName() {
   const dispatch = useDispatch();
-  const [secondName, setSecondName] = useState(
-    useSelector((state) => state.secondName)
-  );
+  const stateSecondName = useSelector((state) => state.secondName);
+
+  const [secondName, setSecondName] = useState(stateSecondName);
   const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     dispatch(changeSecondName(secondName));
   }, [secondName]);
+
+  useEffect(() => {
+    setSecondName(stateSecondName);
+  }, [stateSecondName]);
 
   const handleInputSecondName = (event) => {
     setSecondName(event.target.value);

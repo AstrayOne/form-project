@@ -39,3 +39,9 @@ export const changeUniversity = (text) => {
     text,
   };
 };
+
+export const resetAll = () => {
+  return {
+    type: "RESET_ALL",
+  };
+};

@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeMiddleName } from "../../actions";
+import { changeMiddleName } from "../../../actions";
 import styles from "./InputMiddleName.module.css";
-import { validStringRegExp } from "../../data/regExps";
+import { validStringRegExp } from "../../../Utils/regExps";
 
 function InputMiddleName() {
   const dispatch = useDispatch();
-  const [middleName, setMiddleName] = useState(
-    useSelector((state) => state.middleName)
-  );
+  const stateMiddleName = useSelector((state) => state.middleName);
+
+  const [middleName, setMiddleName] = useState(stateMiddleName);
   const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     dispatch(changeMiddleName(middleName));
   }, [middleName]);
+
+  useEffect(() => {
+    setMiddleName(stateMiddleName);
+  }, [stateMiddleName]);
 
   const handleInputMiddleName = (event) => {
     setMiddleName(event.target.value);

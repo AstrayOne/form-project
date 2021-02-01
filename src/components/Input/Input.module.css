@@ -1,3 +1,18 @@
+.age {
+  grid-column: 2/4;
+  grid-row: 5;
+}
+
+.firstName {
+  grid-column: 2/5;
+  grid-row: 2;
+}
+
+.secondName {
+  grid-column: 2/5;
+  grid-row: 3;
+}
+
 .middleName {
   grid-column: 2/5;
   grid-row: 4;
@@ -8,7 +23,8 @@
   width: 288px;
   padding: 0px 20px;
   margin-top: 5px;
-  margin-right: 0px;
+  /* margin-right: auto;
+  margin-left: auto; */
   margin-bottom: 10px;
   font: 16px 'Roboto-Regular', sans-serif;
   line-height: 40px;
@@ -16,6 +32,10 @@
   border: 1px solid #e5e5e5;
   outline: none;
   background-color: #f9f9f9;
+}
+
+.ageInput {
+  width: 148px;
 }
 
 .input:hover {
@@ -28,23 +48,4 @@
 
 .label {
   margin-top: 20px;
-}
-
-.error {
-  position: relative;
-  padding-left: 25px;
-  color: red;
-  font: 12px "Roboto-Light", sans-serif;
-}
-
-.error::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 0px;
-  width: 17px;
-  height: 17px;
-  background-image: url("../../img/error.png");
-  background-size: 17px;
-  background-repeat: no-repeat;
 }
