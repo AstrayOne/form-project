@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import {  ErrorMessage } from "formik";
+import { ErrorMessage } from "formik";
 import PropTypes from "prop-types";
-import styles from "./SelectGender.module.css";
+import styles from "@components/SelectGender/SelectGender.module.css";
 import Error from "@components/Error";
 import { changeGender } from "@actions";
 
@@ -20,7 +20,6 @@ const SelectGender = (props) => {
 
   useEffect(() => {
     setGender(value);
-    console.log(gender);
   }, [value]);
 
   const handleOnChange = (event) => {

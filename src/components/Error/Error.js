@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./Error.module.css";
+import styles from "@components/Error/Error.module.css";
 
 const Error = (props) => {
   return (

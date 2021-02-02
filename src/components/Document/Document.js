@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import styles from "./Document.module.css";
+import styles from "@components/Document/Document.module.css";
 
 function Document() {
   const name = useSelector((state) => state.name);

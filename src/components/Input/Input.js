@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 import { changeName, changeSecondName, changeMiddleName, changeAge } from "@actions";
 import Error from "@components/Error";
-import styles from "./Input.module.css";
+import styles from "@components/Input/Input.module.css";
 
 const Input = (props) => {
   const { label, name, value, className, ...rest } = props;

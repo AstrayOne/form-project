@@ -6,7 +6,7 @@ import Input from "@components/Input";
 import SelectGender from "@components/SelectGender";
 import SelectUniversity from "@components/SelectUniversity";
 import { resetAll } from "@actions";
-import styles from "./Form.module.css";
+import styles from "@components/Form/Form.module.css";
 import { universityList } from "@constants/universityList";
 
 const Form = () => {
@@ -47,7 +47,6 @@ const Form = () => {
           university: Yup.string().required("Обязательно"),
         })}
         onSubmit={(values) => {
-          console.log(values);
           alert(JSON.stringify(values, null, 2));
         }}
       >

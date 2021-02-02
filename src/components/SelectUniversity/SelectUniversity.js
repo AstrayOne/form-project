@@ -5,7 +5,7 @@ import { ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { changeUniversity } from "@actions";
 import Error from "@components/Error";
-import styles from "./SelectUniversity.module.css";
+import styles from "@components/SelectUniversity/SelectUniversity.module.css";
 
 function SelectUniversity(props) {
   const dispatch = useDispatch();
