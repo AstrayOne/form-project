@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { ErrorMessage } from "formik";
+import { ErrorMessage, Field } from "formik";
 import PropTypes from "prop-types";
 import styles from "@components/SelectGender/SelectGender.module.css";
 import Error from "@components/Error";
 import { changeGender } from "@actions";
 
 const SelectGender = (props) => {
-  const {label, name, value, onChange, ...rest} = props;
+  const {label, name, value, ...rest} = props;
 
   const dispatch = useDispatch();
 
   const [gender, setGender] = useState(value);
 
   useEffect(() => {
-    onChange(gender);
+    //onChange(gender);
     dispatch(changeGender(gender));
   }, [gender]);
 
@@ -22,13 +22,39 @@ const SelectGender = (props) => {
     setGender(value);
   }, [value]);
 
-  const handleOnChange = (event) => {
-    setGender(event.target.value);
-  };
+  // const handleOnChange = (event) => {
+  //   setGender(event.target.value);
+  // };
 
   return (
     <div className={styles.gender}>
       <div>{label}</div>
+      <div className={styles.radio}>
+        <label className={styles.label}>
+          <Field
+            className={styles.input}
+            type="radio"
+            name={name}
+            id={name}
+            value="мужской"
+          />
+          Мужской
+        </label>
+      </div>
+      <div className={styles.radio}>
+        <label className={styles.label}> 
+          <Field
+            className={styles.input}
+            type="radio"
+            name={name}
+            id={name}
+            value="женский"
+          />
+          Женский
+        </label>
+      </div>
+
+      {/* <div>{label}</div>
       <div className={styles.radio}>
         <label className={styles.label}>
           <input 
@@ -52,7 +78,8 @@ const SelectGender = (props) => {
             ></input>
           Женский
         </label>
-     </div>
+     </div> */}
+
       <ErrorMessage name={name} component={Error} />
     </div>
   );
@@ -62,14 +89,14 @@ SelectGender.defaultProps = {
   label: "",
   name: "",
   value: "",
-  onChange: () => {},
+  //onChange: () => {},
 };
 
 SelectGender.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
-  onChange: PropTypes.func,
+  //onChange: PropTypes.func,
 };
 
 export default SelectGender;

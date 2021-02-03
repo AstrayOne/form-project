@@ -77,7 +77,8 @@ const Form = () => {
             label="Пол"
             name="gender"
             value={formProps.values.gender}
-            onChange={value=>formProps.setFieldValue('gender', value)}/>
+           // onChange={value=>formProps.setFieldValue('gender', value)}
+           />
           <SelectUniversity 
             name="university"
             value={formProps.values.university}
