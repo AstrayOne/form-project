@@ -6,5 +6,5 @@ App - https://form-project-4353c.web.app/
 
 * Based on create-react-app
 * React 
-* React Redux
+* Redux
 * Formik
