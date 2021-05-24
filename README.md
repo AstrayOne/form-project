@@ -1,4 +1,4 @@
-Training Application.
+Training Application to learn how to work with forms in React.
 
 # Stack
 
